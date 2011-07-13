@@ -1,0 +1,28 @@
+#product-info  {
+    product-name: "GNU less";
+    version: "443";
+    original-source-location: "http://ftp.gnu.org/gnu/less/";
+    original-source-website: "http://www.gnu.org/software/less/";
+    license: "GPL";
+    packager: "Petter Strandmark";
+}
+
+
+x64  {
+    compiler: vc10-x64 ;
+ 
+    targets: { 
+				//Program
+				"less.exe",
+				"lesskey.exe",
+			} ;
+ 
+    build-command: @"
+			nmake
+			";
+
+    clean-command: @"
+			 nmake clean
+			 del /Q defines.h
+			";
+}
